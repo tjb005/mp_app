@@ -1,5 +1,7 @@
 MpApp::Application.routes.draw do
-  get "users/new"
+  get "aircrafts/new"
+  resources :users
+  resources :aircrafts
   root 'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
