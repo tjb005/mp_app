@@ -5,10 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    aircraft = Aircraft.find_by(reg: "PBA")
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to aircraft 
+      redirect_to weight_url #aircrafts_path
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'

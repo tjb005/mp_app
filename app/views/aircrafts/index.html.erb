@@ -1,0 +1,7 @@
+<ul class="users">
+  <% @aircrafts.each do |aircraft| %>
+    <li>
+      <%= link_to aircraft.reg, aircraft %>
+    </li>
+  <% end %>
+</ul>

@@ -5,4 +5,9 @@ class AircraftsController < ApplicationController
   def show
   	@aircraft = Aircraft.find(params[:id])
   end
+
+  def index
+  	@aircrafts = Aircraft.all
+  end
+
 end
