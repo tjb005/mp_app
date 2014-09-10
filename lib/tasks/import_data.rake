@@ -12,5 +12,13 @@ namespace :db do
     csv.each do |row|
     	Aircraft.create!(row.to_hash)
     end
+
+    require 'csv'
+    csv_text = File.read('db/w1.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      W1.create!(row.to_hash)
+    end
+
   end
 end
