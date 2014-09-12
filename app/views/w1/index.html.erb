@@ -1,16 +1,14 @@
-  <div class="span8">
-    <% if @aircraft.w1s.any? %>
-      <h3>W1s (<%= @aircraft.w1s.count %>)</h3>
-		  <% @aircraft.w1s.each do |w1| %>
-		    <li>
-		      <%= link_to w1.date, w1 %>
-		      <%= link_to w1.desc, w1 %>
-		      <%= link_to w1.wt, w1 %>
-		      <%= link_to w1.arm, w1 %>
-		      <%= link_to w1.moment, w1 %>
-		      <%= link_to w1.wca, w1 %>
-		    </li>
-		  <% end %>
-      </ol>
-    <% end %>
-  </div>	
+<h1>All W1s</h1>
+
+<ul class="users">
+  <% @w1.each do |w1| %>
+    <li>
+		  <%= link_to w1.date, w1 %>
+      <%= link_to w1.desc, w1 %>
+      <%= link_to w1.wt, w1 %>
+      <%= link_to w1.arm, w1 %>
+      <%= link_to w1.moment, w1 %>
+      <%= link_to w1.wca, w1 %>
+    </li>
+  <% end %>
+</ul>

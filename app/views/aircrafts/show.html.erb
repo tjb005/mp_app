@@ -1,4 +1,46 @@
-<%= @aircraft.reg %>
-<%= @aircraft.w1 %>
-<%= @aircraft.w2 %>
-<%= @aircraft.w3 %>
+<h1><%= @aircraft.reg %></h1>
+<table class="table table-bordered">
+<tr class="info">
+<td>
+	<p>Date</p>
+</td>
+<td>
+	<p>Description</p>
+</td>
+<td>
+	<p>Weight</p>
+</td>
+<td>
+	<p>Arm</p>
+</td>
+<td>
+	<p>Moment</p>
+</td>
+<td>
+	<p>WCA</p>
+</td>
+</tr>
+
+<% @w1s.each do |w1| %>
+<tr>
+<td>
+	<%= w1.date %>
+</td>
+<td>
+	<%= w1.desc%>
+</td>
+<td>
+	 <%= w1.wt %>
+</td>
+<td>
+	 <%= w1.arm %>
+</td>
+<td>
+	<%= w1.moment %>
+</td>
+<td>
+	<%= w1.wca %>
+</td>
+</tr>
+  <% end %>
+</table>

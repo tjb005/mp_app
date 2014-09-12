@@ -1,0 +1,30 @@
+id,aircraft_id,date,desc,wt,arm,moment,wca
+1,1,13/04/2012,EO-0501-011 Issue 1 Replace Carpet,-13.6,640,-8695,A760517
+2,1,13/04/2012,EO-0502-002 Issue 2 Part A  Install LH Windscreen - Clevis,0.2,166,33.2,A760517
+3,1,13/04/2012,EO-0502-002 Issue 2 Part B  Install LH Windscreen ,28,152,4256,A760517
+4,1,13/04/2012,EO-0385-311 Issue 2 Repitch Seats,0, ,2947,A760517
+5,1,13/04/2012,EO-500-011 Issue 4 Move Emergency Equipment,-8.7,1516.321839,-13192,A760517
+6,1,13/04/2012,EO-0504-002 Issue 1 Replace Laminates,4.78,802.1401674,3834.23,A760517
+7,1,13/04/2012,EO-0507-005 Issue 4 Replace Seat Covers/Seat Trims (only part C& D complete 20/3 - neg weight),0,0,0,A760517
+8,1,9/07/2012,EO-0507-005 Issue 3 Replacement Seat Covers Install,90.1,691.3,62291,A760517
+9,1,2/09/2013,Inc. EO44-9300-00 - Install E8 Provisonal Equipment Rack,16.56,,2020.32,A595659
+10,1,2/09/2013,Inc. EO44-9155-00 - Install BoardConnect Wi-Fi IFE System (DC104-9100-00 GRP 2),29.3,,13388.7,A595659
+11,1,30/10/2013,Inc. STC ST10928SC Install of Iridium Sat-Com,14.7,231.7,3406,A605787
+12,1,29/01/2014,Metal Storage Bin under 2nd Observer Seat (EO 737-25-10-008),3.3,67,221.1,A605787
+13,1,29/01/2014,Pins & Covers,1.292,76,98.192,A605787
+14,1,29/01/2014,DG Kits (x2),0.852,152,129.504,A605787
+15,1,29/01/2014,Defibrillator,3.1,152,471.2,A605787
+16,1,29/01/2014,Disabled PAX Harness (x2),1.394,152,211.888,A605787
+17,1,29/01/2014,Seat Occupied Signs (x2),0.11,152,16.72,A605787
+18,1,29/01/2014,Safety Demonstration Kit (x1) - FWD (EO 737-25-20-004),0.91,145,131.95,A605787
+19,1,29/01/2014,Safety Demonstration Kit (x2) - AFT (EO 737-25-20-004),1.82,1219,2218.58,A605787
+20,1,29/01/2014,First Aid Pocket Mask - FWD,0.124,152,18.848,A605787
+21,1,29/01/2014,First Aid Pocket Mask - AFT,0.124,1163,144.212,A605787
+22,1,29/01/2014,Physicans Kit,6.7,1066,7142.2,A605787
+23,1,29/01/2014,Service Prep Benches (x4),2.4,1100,2640,A605787
+24,1,29/01/2014,Spare Oxygen Masks (x10) in Bag,0.5,1100,550,A605787
+25,1,29/01/2014,Infant & Adult Extension Seat Belts (multiple) ~ G4 Galley,4.528,1219,5519.632,A605787
+26,1,29/01/2014,Cargo Pouch and Straps (EO 737-25-50-003),4,242,968,A605787
+27,1,29/01/2014,Bomb Search Kit,0.45,152,68.4,A605787
+28,1,29/01/2014,Sunvisor - Captain,0.37,56,20.72,A605787
+29,1,29/01/2014,Sunvisor - First Officer,0.37,56,20.72,A605787

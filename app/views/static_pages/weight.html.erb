@@ -4,7 +4,7 @@
 	<%= link_to "W1 weights", w1_index_path %>
   </div>
 
-   <%= form_for(:aircraft, url: w1_index_path) do |f| %>
+   <%= form_for(@aircraft) do |f| %>
 
       <%= f.label :reg %>
       <%= f.text_field :reg %>
