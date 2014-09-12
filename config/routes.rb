@@ -4,7 +4,7 @@ MpApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :aircrafts
   resources :w1
-  root 'static_pages#home'
+  root 'sessions#new'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/weight',  to: 'static_pages#weight',  via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

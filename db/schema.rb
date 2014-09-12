@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904034318) do
+ActiveRecord::Schema.define(version: 20140912052647) do
 
   create_table "aircrafts", force: true do |t|
     t.string   "reg"
@@ -31,7 +31,22 @@ ActiveRecord::Schema.define(version: 20140904034318) do
     t.string   "remember_token"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "w1c1s", force: true do |t|
+    t.date     "date"
+    t.string   "desc"
+    t.float    "wt"
+    t.float    "arm"
+    t.float    "moment"
+    t.string   "wca"
+    t.integer  "aircraft_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "w1c1s", ["aircraft_id"], name: "index_w1c1s_on_aircraft_id"
 
   create_table "w1s", force: true do |t|
     t.date     "date"

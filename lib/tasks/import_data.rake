@@ -20,5 +20,12 @@ namespace :db do
       W1.create!(row.to_hash)
     end
 
+    require 'csv'
+    csv_text = File.read('db/w1c1.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      W1c1.create!(row.to_hash)
+    end
+
   end
 end
