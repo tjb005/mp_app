@@ -1,5 +1,5 @@
 <h1><%= @aircraft.reg %></h1>
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
 	<tr class="info">
 		<td>
 			<p>Date</p>
@@ -65,6 +65,104 @@
 		</td>
 	</tr>
 	<% end %>
-</table>
-<%= @w1_history %>
-<%= @lengther %>
+</table> -->
+
+<div id="w1_div"></div>
+
+<script type=text/javascript>
+
+	// time vector
+	var date_gph_raw = <%=raw @w1_date.as_json %>;
+	var format = d3.time.format("%Y-%m-%d");
+
+	var date_gph = [];
+	for	(i = 0; i < date_gph_raw.length; i++) {
+			date_gph[i] = format.parse(date_gph_raw[i]);
+	};
+
+	// other data
+	var wt_gph 	 = <%=raw @w1_hist %>;	
+
+	// array for d3 line
+	var dataset = new Array(date_gph.length);
+	for	(i = 0; i < date_gph.length; i++) {
+			dataset[i] = [date_gph[i], wt_gph[i]]
+	};
+
+	// graph properties
+	var w = 700; // width
+	var h = 500; // height
+
+	var pad_vert = 50; //
+	var pad_horz = 200;
+
+	var y_range_bot = h/10; // y axis start point
+	var y_buffer = 20; // buffer for y axis domain
+
+	var title1 = "Empty Weight Vs Time";
+	var title_y_pos = h/30;
+
+	var axis1 = "Date";
+	var axis2 = "Weight (kg)";
+
+    //Create SVG element 
+    var xScale = d3.time.scale()
+                   .domain(d3.extent(dataset, function(d) { return d[0]; }))
+                   .range([pad_horz, w]);
+    var yScale = d3.scale.linear()
+                   .domain([d3.max(dataset, function(d) { return d[1]; }), d3.min(dataset, function(d) { return d[1]-y_buffer; })])
+                   .range([y_range_bot, h-pad_vert]);
+
+    var valueline = d3.svg.line()
+    	.x(function(d) { return xScale(d[0]); })
+    	.y(function(d) { return yScale(d[1]); });
+
+    var svg = d3.select("#w1_div")
+    	.append("svg")
+    	.attr("width", w)
+    	.attr("height", h);
+
+     svg.append("path")
+     	.attr("class", "line")
+   		.attr("d", valueline(dataset));
+
+   	 svg.append("text")
+   	  	.attr("x", ((w-pad_horz)/ 2)+pad_horz/2)             
+        .attr("y", title_y_pos)
+   	    .text(title1);
+
+   	 svg.append("text")
+   	  	.attr("x", ((w-pad_horz)/ 2)+pad_horz)             
+        .attr("y", h)
+   	    .text(axis1);
+
+   	 svg.append("text")
+   	  	.attr("x", pad_horz/5)             
+        .attr("y", (h-pad_vert)/2 )
+   	    .text(axis2);
+
+	//Define X axis
+   	var xAxis = d3.svg.axis()
+                  .scale(xScale)
+                  .orient("bottom")
+                  .ticks(7)
+                  .tickFormat(d3.time.format('%b %y'));
+
+    //Create X axis    
+    svg.append("g")
+    .attr("class", "axis") 
+    .attr("transform", "translate(0," + (h - pad_vert) + ")")
+    .call(xAxis);
+
+    //Define Y axis
+	var yAxis = d3.svg.axis()
+                  .scale(yScale)
+                  .orient("left")
+
+    //Create Y axis
+	svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + pad_horz + ",0)")
+    .call(yAxis);
+
+</script>
