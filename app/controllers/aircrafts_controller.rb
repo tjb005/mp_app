@@ -12,16 +12,16 @@ class AircraftsController < ApplicationController
   @date_point = (@w1s[0].date..Date.today)
 
   # weight historical vectors
-  @w1_hist = []
-  @w1_date = []
-  @w2_hist = []
+  @date_array = []
+  @w1_wt = []
+  @w2_wt = []
 
   inc = 0     # variable for incremental weight changes
 
   # calculate w1 at date_point
   @date_point.each do |date_point|
 
-    @w1_date.push(date_point)
+    @date_array.push(date_point)
 
     (0..@w1s.length-1).each do |i|
       if date_point - @w1s[i].date >= 0
@@ -40,7 +40,7 @@ class AircraftsController < ApplicationController
             end
 
             w1_wt = w1 + inc
-            @w1_hist.push(w1_wt)
+            @w1_wt.push(w1_wt)
           end
 
         else
@@ -57,14 +57,14 @@ class AircraftsController < ApplicationController
           end
 
           w1_wt = w1 + inc
-          @w1_hist.push(w1_wt)
+          @w1_wt.push(w1_wt)
 
         end
       end 
     end
   end 
 
-  # Calculate w2 at date_point
+  # calculate w2 at date_point
 
 
 end

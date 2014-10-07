@@ -1,4 +1,3 @@
-<h1><%= @aircraft.reg %></h1>
 <!-- <table class="table table-bordered">
 	<tr class="info">
 		<td>
@@ -66,35 +65,339 @@
 	</tr>
 	<% end %>
 </table> -->
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="color:white;" href="#"><%= @aircraft.reg %></a>
+    </div>
 
-<div id="w1_div"></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">General</a></li>
+        <li><a href="#">W&B Ops</a></li>
+        <li><a href="#">LMC</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Non-standard fuel</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+<!-- General -->
+<!-- <div class="row">
+<div class="col-sm-2 col-sm-offset-1">
+<table class="table table-bordered table-condensed">
+<tr>
+	<td class="info" colspan="2">Aircraft Info</td>
+</tr>
+<tr>
+	<td>S/N</td>
+	<td>33796</td>
+</tr>
+<tr>
+	<td>FCOM No.</td>
+	<td>815</td>
+</tr>
+<tr>
+	<td>Engine</td>
+	<td>26K</td>
+</tr>
+<tr>
+	<td>MTW (kg)</td>
+	<td>79242</td>
+</tr>
+<tr>
+	<td>MTOW (kg)</td>
+	<td>79015</td>
+</tr>
+<tr>
+	<td>MLW (kg) </td>
+	<td>66360 </td>
+</tr>
+<tr>
+	<td>MZFW (kg)</td>
+	<td>62731</td>
+</tr>
+<tr>
+	<td>Standard Crew</td>
+	<td>2/4</td>
+</tr>
+</table>
+</div>
+<div class="col-sm-4">
+<table class="table table-bordered table-condensed">
+<tr>
+	<td class="active" colspan="3">Loading System Configuration Summary</td>
+</tr>
+<tr>
+	<td rowspan="2">EQUIP CODE</td>
+	<td>DCS</td>
+	<td>73W</td>
+</tr>
+<tr>
+	<td>LCS</td>
+	<td>737</td>
+</tr>
+<tr>
+	<td rowspan="2">CONFIG CODE</td>
+	<td>WBM</td>
+	<td>W</td>
+</tr>
+<tr>
+	<td>MLTS</td>
+	<td>738B</td>
+</tr>
+<tr>
+	<td rowspan="3">MLTS</td>
+	<td>Form No.</td>
+	<td>VAGP-FO-018A</td>
+</tr>
+<tr>
+	<td>Issue No.</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>Issue Date</td>
+	<td>12-Dec-12</td>
+</tr>
+<tr>
+	<td rowspan="3">MLTS (Ferry)</td>
+	<td>Form No.</td>
+	<td>VAGP-FO-039</td>
+</tr>
+<tr>
+	<td>Issue No.</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>Issue Date</td>
+	<td>12-Dec-12</td>
+</tr>
+</table>
+</div>
+
+<div class="col-sm-4">
+<table class="table table-bordered table-condensed">
+<tr>
+	<td class="warning" colspan="3">Aircraft Configuration Summary</td>
+</tr>
+<tr>
+	<td>Livery</td>
+	<td>VA</td>
+</tr>
+<tr>
+	<td>Int'l Ops</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>Life Rafts</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>Interior Type</td>
+	<td>Refurb</td>
+</tr>
+<tr>
+	<td>Interior Layout</td>
+	<td>W/Y</td>
+</tr>
+<tr>
+	<td>Cabin Config</td>
+	<td>8W/168Y</td>
+</tr>
+<tr>
+	<td>Potable Water Full (L)</td>
+	<td>227</td>
+</tr>
+<tr>
+	<td>SFP</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>IFE</td>
+	<td>Wireless</td>
+</tr>
+<tr>
+	<td>Lessor</td>
+	<td>VOZ</td>
+</tr>
+</table>
+</div>
+</div>	 -->
+
+<!-- W&B Ops -->
+<!-- Long term goal is to include the IU calculator in this tab -->
+<!-- <div class="row">
+	<div class="col-sm-5 col-sm-offset-1">
+		<table class="table table-bordered table-condensed">
+			<tr>
+				<td class="info" colspan="3">Adjustments</td>
+			</tr>
+			<tr>
+				<td>Variable Items - 738 </td>
+				<td>Wt (kg) </td>
+				<td>IU </td>
+			</tr>
+			<tr>
+				<td>Flight Deck Observer - Add (x1)</td>
+				<td>+95</td>
+				<td>-1.9</td>
+			</tr>
+			<tr>
+				<td>Cabin Crew - Add x 1 (FWD)</td>
+				<td>+85</td>
+				<td>-1.5</td>
+			</tr>
+			<tr>
+				<td>Cabin Crew - Add x 1 (AFT)</td>
+				<td>+85</td>
+				<td>+1.5</td>
+			</tr>
+			<tr>
+				<td>Additional Catering - G1</td>
+				<td>+10</td>
+				<td>-0.18</td>
+			</tr>
+			<tr>
+				<td>Additional Catering - G2</td>
+				<td>+10</td>
+				<td>-0.17</td>
+			</tr>
+			<tr>
+				<td>Additional Catering - G4B</td>
+				<td>+10</td>
+				<td>+0.19</td>
+			</tr>
+			<tr>
+				<td>Life Raft - All (x4) & ELT (x1) </td>
+				<td>+178</td>
+				<td>-1.0</td>
+			</tr>
+			<tr>
+				<td>Life Raft & ELT - Single </td>
+				<td>+49</td>
+				<td>-0.6</td>
+			</tr>
+			<tr>
+				<td>Potable Water (60 USGal)</td>
+				<td>+227</td>
+				<td>+3.9</td>
+			</tr>
+			<tr>
+				<td>Potable Water (40 USGal)</td>
+				<td>+151</td>
+				<td>+2.6</td>
+			</tr>
+			<tr>
+				<td>Centre Tank Fuel</td>
+				<td>+1000</td>
+				<td>+1.7</td>
+			</tr>
+			<tr>
+				<td rowspan="2">Remove (4) Flight Attendants - (2) FWD and (2) AFT</td>
+				<td>-340</td>
+				<td>+0.2</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-sm-5">
+		<div class="row">
+			<div class="col-sm-12">
+				<table class="table table-bordered table-condensed">
+					<tr>
+						<td class="warning" colspan="2">Galley Balance Arms</td>
+					</tr>
+					<tr>
+						<td>G1</td>
+						<td>86.0</td>
+					</tr>
+					<tr>
+						<td>G2</td>
+						<td>140.0</td>
+					</tr>
+					<tr>
+						<td>G4</td>
+						<td>1219.0</td>
+					</tr>
+					<tr>
+						<td colspan="2">Index Unit Equation = W(Arm-654.8)/16000</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-sm-12">
+				<table class="table table-bordered table-condensed">
+					<tr>
+						<td class="warning" colspan="2">APS Weight GRP 00</td>
+					</tr>
+					<tr>
+						<td>2 Flight Crew + Nav Bags</td>
+					</tr>
+					<tr>
+						<td>Standard Cabin Crew Complement</td>
+					</tr>
+					<tr>
+						<td>Loose Cabin Items</td>
+					</tr>
+					<tr>
+						<td>Lav Precharge</td>
+					</tr>
+					<tr>
+						<td>Potable Water (332-75%)</td>
+					</tr>
+					<tr>
+						<td>Permanent fit life rafts (if carried)</td>
+					</tr>
+					<tr>
+						<td>Nil Catering Equipment</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>	 -->
+
+<!-- Analytics -->
+<div class="row">
+	<div class="col-sm-1 col-sm-offset-1">
+		<div id="w1_div"></div>
+	</div>
+</div>
 
 <script type=text/javascript>
 
 	// time vector
-	var date_gph_raw = <%=raw @w1_date.as_json %>;
+	var date_array_raw = <%=raw @date_array.as_json %>;
 	var format = d3.time.format("%Y-%m-%d");
 
-	var date_gph = [];
-	for	(i = 0; i < date_gph_raw.length; i++) {
-			date_gph[i] = format.parse(date_gph_raw[i]);
+	var date_array = [];
+	for	(i = 0; i < date_array_raw.length; i++) {
+			date_array[i] = format.parse(date_array_raw[i]);
 	};
 
 	// other data
-	var wt_gph 	 = <%=raw @w1_hist %>;	
+	var w1_wt 	 = <%=raw @w1_wt %>;	
 
 	// array for d3 line
-	var dataset = new Array(date_gph.length);
-	for	(i = 0; i < date_gph.length; i++) {
-			dataset[i] = [date_gph[i], wt_gph[i]]
+	var dataset = new Array(date_array.length);
+	for	(i = 0; i < date_array.length; i++) {
+			dataset[i] = [date_array[i], w1_wt[i]]
 	};
 
 	// graph properties
-	var w = 700; // width
-	var h = 500; // height
+	var w = 500; // width
+	var h = 300; // height
 
 	var pad_vert = 50; //
-	var pad_horz = 200;
+	var pad_horz = 150;
 
 	var y_range_bot = h/10; // y axis start point
 	var y_buffer = 20; // buffer for y axis domain
@@ -131,17 +434,19 @@
         .attr("y", title_y_pos)
    	    .text(title1);
 
+   	 // x axis label
    	 svg.append("text")
    	  	.attr("x", ((w-pad_horz)/ 2)+pad_horz)             
         .attr("y", h)
    	    .text(axis1);
 
+   	 // y axis label
    	 svg.append("text")
    	  	.attr("x", pad_horz/5)             
         .attr("y", (h-pad_vert)/2 )
    	    .text(axis2);
 
-	//Define X axis
+	// define X axis
    	var xAxis = d3.svg.axis()
                   .scale(xScale)
                   .orient("bottom")
@@ -153,16 +458,18 @@
     .attr("class", "axis") 
     .attr("transform", "translate(0," + (h - pad_vert) + ")")
     .call(xAxis);
+ 
 
     //Define Y axis
 	var yAxis = d3.svg.axis()
                   .scale(yScale)
-                  .orient("left")
+                  .orient("left");
 
     //Create Y axis
 	svg.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(" + pad_horz + ",0)")
     .call(yAxis);
+
 
 </script>

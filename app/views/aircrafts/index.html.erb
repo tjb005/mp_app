@@ -1,7 +1,9 @@
-<ul class="users">
-  <% @aircrafts.each do |aircraft| %>
-    <li>
-      <%= link_to aircraft.reg, aircraft %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+	<div class="col-md-4">
+		<ul class="list-group">
+			<% @aircrafts.each do |aircraft| %>
+			<li class="list-group-item"><%= link_to aircraft.reg, aircraft %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
