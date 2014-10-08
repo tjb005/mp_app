@@ -1,5 +1,17 @@
 @import "bootstrap";
 
+#page_1{
+	display: none;
+}
+
+#page_2{
+	display: none;
+}
+
+#page_3{
+	
+}
+
 .axis path,
 .axis line {
 fill: none;
@@ -14,12 +26,27 @@ font-size: 11px;
 
 path.line {
 fill: none;
-stroke: #666;
+stroke: brown;
 stroke-width: 1.5px;
 }
 
 /*w1 graph*/
-#w1_div{
-float:left;
+#area1{
+  float:left;
+  width: 500px;
+  height: 300px;
+}
+
+/*tooltips*/
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
 }
 

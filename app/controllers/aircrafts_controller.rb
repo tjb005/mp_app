@@ -40,7 +40,7 @@ class AircraftsController < ApplicationController
             end
 
             w1_wt = w1 + inc
-            @w1_wt.push(w1_wt)
+            @w1_wt.push(w1_wt.round)
           end
 
         else
@@ -57,7 +57,7 @@ class AircraftsController < ApplicationController
           end
 
           w1_wt = w1 + inc
-          @w1_wt.push(w1_wt)
+          @w1_wt.push(w1_wt.round)
 
         end
       end 

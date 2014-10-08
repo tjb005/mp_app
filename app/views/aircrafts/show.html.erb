@@ -1,242 +1,175 @@
-<!-- <table class="table table-bordered">
-	<tr class="info">
-		<td>
-			<p>Date</p>
-		</td>
-		<td>
-			<p>Description</p>
-		</td>
-		<td>
-			<p>Weight</p>
-		</td>
-		<td>
-			<p>Arm</p>
-		</td>
-		<td>
-			<p>Moment</p>
-		</td>
-		<td>
-			<p>WCA</p>
-		</td>
-	</tr>
-
-	<% @w1s.each do |w1| %>
-	<tr>
-		<td>
-			<%= w1.date %>
-		</td>
-		<td>
-			<%= w1.desc%>
-		</td>
-		<td>
-			<%= w1.wt %>
-		</td>
-		<td>
-			<%= w1.arm %>
-		</td>
-		<td>
-			<%= w1.moment %>
-		</td>
-		<td>
-			<%= w1.wca %>
-		</td>
-	</tr>
-	<% end %>
-	<% @w1c1s.each do |w1c1| %>
-	<tr>
-		<td>
-			<%= w1c1.date %>
-		</td>
-		<td>
-			<%= w1c1.desc%>
-		</td>
-		<td>
-			<%= w1c1.wt %>
-		</td>
-		<td>
-			<%= w1c1.arm %>
-		</td>
-		<td>
-			<%= w1c1.moment %>
-		</td>
-		<td>
-			<%= w1c1.wca %>
-		</td>
-	</tr>
-	<% end %>
-</table> -->
+<!-- navbar -->
 <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" style="color:white;" href="#"><%= @aircraft.reg %></a>
-    </div>
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" style="color:white;" href="#"><%= @aircraft.reg %></a>
+		</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">General</a></li>
-        <li><a href="#">W&B Ops</a></li>
-        <li><a href="#">LMC</a></li>
-        <li><a href="#">Analytics</a></li>
-        <li><a href="#">Non-standard fuel</a></li>
-      </ul>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">General</a></li>
+				<li><a href="#" onclick="collapseElement('page_1');collapseElement('page_3');expandElement('page_2');">W&B Ops</a></li>
+				<li><a href="#">Analytics</a></li>
+				<li><a href="#">LMC</a></li>
+				<li><a href="#">Non-standard fuel</a></li>
+			</ul>
 
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
 </nav>
-    
-<!-- General -->
-<!-- <div class="row">
-<div class="col-sm-2 col-sm-offset-1">
-<table class="table table-bordered table-condensed">
-<tr>
-	<td class="info" colspan="2">Aircraft Info</td>
-</tr>
-<tr>
-	<td>S/N</td>
-	<td>33796</td>
-</tr>
-<tr>
-	<td>FCOM No.</td>
-	<td>815</td>
-</tr>
-<tr>
-	<td>Engine</td>
-	<td>26K</td>
-</tr>
-<tr>
-	<td>MTW (kg)</td>
-	<td>79242</td>
-</tr>
-<tr>
-	<td>MTOW (kg)</td>
-	<td>79015</td>
-</tr>
-<tr>
-	<td>MLW (kg) </td>
-	<td>66360 </td>
-</tr>
-<tr>
-	<td>MZFW (kg)</td>
-	<td>62731</td>
-</tr>
-<tr>
-	<td>Standard Crew</td>
-	<td>2/4</td>
-</tr>
-</table>
-</div>
-<div class="col-sm-4">
-<table class="table table-bordered table-condensed">
-<tr>
-	<td class="active" colspan="3">Loading System Configuration Summary</td>
-</tr>
-<tr>
-	<td rowspan="2">EQUIP CODE</td>
-	<td>DCS</td>
-	<td>73W</td>
-</tr>
-<tr>
-	<td>LCS</td>
-	<td>737</td>
-</tr>
-<tr>
-	<td rowspan="2">CONFIG CODE</td>
-	<td>WBM</td>
-	<td>W</td>
-</tr>
-<tr>
-	<td>MLTS</td>
-	<td>738B</td>
-</tr>
-<tr>
-	<td rowspan="3">MLTS</td>
-	<td>Form No.</td>
-	<td>VAGP-FO-018A</td>
-</tr>
-<tr>
-	<td>Issue No.</td>
-	<td>4</td>
-</tr>
-<tr>
-	<td>Issue Date</td>
-	<td>12-Dec-12</td>
-</tr>
-<tr>
-	<td rowspan="3">MLTS (Ferry)</td>
-	<td>Form No.</td>
-	<td>VAGP-FO-039</td>
-</tr>
-<tr>
-	<td>Issue No.</td>
-	<td>2</td>
-</tr>
-<tr>
-	<td>Issue Date</td>
-	<td>12-Dec-12</td>
-</tr>
-</table>
+
+<!-- general -->
+<div class="row" id="page_1">
+	<div class="col-sm-2 col-sm-offset-1">
+		<table class="table table-bordered table-condensed">
+			<tr>
+				<td class="info" colspan="2">Aircraft Info</td>
+			</tr>
+			<tr>
+				<td>S/N</td>
+				<td>33796</td>
+			</tr>
+			<tr>
+				<td>FCOM No.</td>
+				<td>815</td>
+			</tr>
+			<tr>
+				<td>Engine</td>
+				<td>26K</td>
+			</tr>
+			<tr>
+				<td>MTW (kg)</td>
+				<td>79242</td>
+			</tr>
+			<tr>
+				<td>MTOW (kg)</td>
+				<td>79015</td>
+			</tr>
+			<tr>
+				<td>MLW (kg) </td>
+				<td>66360 </td>
+			</tr>
+			<tr>
+				<td>MZFW (kg)</td>
+				<td>62731</td>
+			</tr>
+			<tr>
+				<td>Standard Crew</td>
+				<td>2/4</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-sm-4">
+		<table class="table table-bordered table-condensed">
+			<tr>
+				<td class="active" colspan="3">Loading System Configuration Summary</td>
+			</tr>
+			<tr>
+				<td rowspan="2">EQUIP CODE</td>
+				<td>DCS</td>
+				<td>73W</td>
+			</tr>
+			<tr>
+				<td>LCS</td>
+				<td>737</td>
+			</tr>
+			<tr>
+				<td rowspan="2">CONFIG CODE</td>
+				<td>WBM</td>
+				<td>W</td>
+			</tr>
+			<tr>
+				<td>MLTS</td>
+				<td>738B</td>
+			</tr>
+			<tr>
+				<td rowspan="3">MLTS</td>
+				<td>Form No.</td>
+				<td>VAGP-FO-018A</td>
+			</tr>
+			<tr>
+				<td>Issue No.</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Issue Date</td>
+				<td>12-Dec-12</td>
+			</tr>
+			<tr>
+				<td rowspan="3">MLTS (Ferry)</td>
+				<td>Form No.</td>
+				<td>VAGP-FO-039</td>
+			</tr>
+			<tr>
+				<td>Issue No.</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Issue Date</td>
+				<td>12-Dec-12</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="col-sm-4">
+		<table class="table table-bordered table-condensed">
+			<tr>
+				<td class="warning" colspan="3">Aircraft Configuration Summary</td>
+			</tr>
+			<tr>
+				<td>Livery</td>
+				<td>VA</td>
+			</tr>
+			<tr>
+				<td>Int'l Ops</td>
+				<td>Y</td>
+			</tr>
+			<tr>
+				<td>Life Rafts</td>
+				<td>Y</td>
+			</tr>
+			<tr>
+				<td>Interior Type</td>
+				<td>Refurb</td>
+			</tr>
+			<tr>
+				<td>Interior Layout</td>
+				<td>W/Y</td>
+			</tr>
+			<tr>
+				<td>Cabin Config</td>
+				<td>8W/168Y</td>
+			</tr>
+			<tr>
+				<td>Potable Water Full (L)</td>
+				<td>227</td>
+			</tr>
+			<tr>
+				<td>SFP</td>
+				<td>N</td>
+			</tr>
+			<tr>
+				<td>IFE</td>
+				<td>Wireless</td>
+			</tr>
+			<tr>
+				<td>Lessor</td>
+				<td>VOZ</td>
+			</tr>
+		</table>
+	</div>
 </div>
 
-<div class="col-sm-4">
-<table class="table table-bordered table-condensed">
-<tr>
-	<td class="warning" colspan="3">Aircraft Configuration Summary</td>
-</tr>
-<tr>
-	<td>Livery</td>
-	<td>VA</td>
-</tr>
-<tr>
-	<td>Int'l Ops</td>
-	<td>Y</td>
-</tr>
-<tr>
-	<td>Life Rafts</td>
-	<td>Y</td>
-</tr>
-<tr>
-	<td>Interior Type</td>
-	<td>Refurb</td>
-</tr>
-<tr>
-	<td>Interior Layout</td>
-	<td>W/Y</td>
-</tr>
-<tr>
-	<td>Cabin Config</td>
-	<td>8W/168Y</td>
-</tr>
-<tr>
-	<td>Potable Water Full (L)</td>
-	<td>227</td>
-</tr>
-<tr>
-	<td>SFP</td>
-	<td>N</td>
-</tr>
-<tr>
-	<td>IFE</td>
-	<td>Wireless</td>
-</tr>
-<tr>
-	<td>Lessor</td>
-	<td>VOZ</td>
-</tr>
-</table>
-</div>
-</div>	 -->
-
-<!-- W&B Ops -->
-<!-- Long term goal is to include the IU calculator in this tab -->
-<!-- <div class="row">
+<!-- w&b ops -->
+<div class="row" id="page_2">
 	<div class="col-sm-5 col-sm-offset-1">
 		<table class="table table-bordered table-condensed">
 			<tr>
@@ -363,113 +296,238 @@
 			</div>
 		</div>
 	</div>
-</div>	 -->
+</div>	
 
-<!-- Analytics -->
-<div class="row">
-	<div class="col-sm-1 col-sm-offset-1">
-		<div id="w1_div"></div>
+<!-- analytics -->
+<div class="row" id="page_3">
+	<div class="col-sm-8" id="area1">
+	</div>
+	<div class="col-sm-3 col-sm-offset-1" id="area2">
+
+		<table class="table table-bordered">
+			<tr class="info">
+				<td>
+					<p>Date</p>
+				</td>
+				<td>
+					<p>Description</p>
+				</td>
+				<td>
+					<p>Weight</p>
+				</td>
+				<td>
+					<p>Arm</p>
+				</td>
+				<td>
+					<p>Moment</p>
+				</td>
+				<td>
+					<p>WCA</p>
+				</td>
+			</tr>
+
+			<% @w1s.each do |w1| %>
+			<tr>
+				<td>
+					<%= w1.date %>
+				</td>
+				<td>
+					<%= w1.desc%>
+				</td>
+				<td>
+					<%= w1.wt %>
+				</td>
+				<td>
+					<%= w1.arm %>
+				</td>
+				<td>
+					<%= w1.moment %>
+				</td>
+				<td>
+					<%= w1.wca %>
+				</td>
+			</tr>
+			<% end %>
+			<% @w1c1s.each do |w1c1| %>
+			<tr>
+				<td>
+					<%= w1c1.date %>
+				</td>
+				<td>
+					<%= w1c1.desc%>
+				</td>
+				<td>
+					<%= w1c1.wt %>
+				</td>
+				<td>
+					<%= w1c1.arm %>
+				</td>
+				<td>
+					<%= w1c1.moment %>
+				</td>
+				<td>
+					<%= w1c1.wca %>
+				</td>
+			</tr>
+			<% end %>
+		</table>
 	</div>
 </div>
 
+
 <script type=text/javascript>
 
-	// time vector
-	var date_array_raw = <%=raw @date_array.as_json %>;
-	var format = d3.time.format("%Y-%m-%d");
+// multiple tabs
+function collapseElement(obj)
+{
+	var el = document.getElementById(obj);
+	el.style.display = 'none';
+}
+function expandElement(obj)
+{
+	var el = document.getElementById(obj);
+	el.style.display = '';
+}
+function collapsePages()
+{
+	var numFormPages = 3;
+	for(i=2; i <= numFormPages; i++)
+	{
+		currPageId = ('page_' + i);
+		collapseElement(currPageId);
+	}
+}
 
-	var date_array = [];
-	for	(i = 0; i < date_array_raw.length; i++) {
-			date_array[i] = format.parse(date_array_raw[i]);
-	};
+// time vector
+var date_array_raw = <%=raw @date_array.as_json %>;
+var parseDate = d3.time.format("%Y-%m-%d");
 
-	// other data
-	var w1_wt 	 = <%=raw @w1_wt %>;	
+var date_array = [];
+for	(i = 0; i < date_array_raw.length; i++) {
+	date_array[i] = parseDate.parse(date_array_raw[i]);
+};
 
-	// array for d3 line
-	var dataset = new Array(date_array.length);
-	for	(i = 0; i < date_array.length; i++) {
-			dataset[i] = [date_array[i], w1_wt[i]]
-	};
+// other data
+var w1_wt 	 = <%=raw @w1_wt %>;	
 
-	// graph properties
-	var w = 500; // width
-	var h = 300; // height
+// array for d3 line
+var dataset = new Array(date_array.length);
+for	(i = 0; i < date_array.length; i++) {
+	dataset[i] = [date_array[i], w1_wt[i]]
+};
 
-	var pad_vert = 50; //
-	var pad_horz = 150;
+// graph properties
+var w = document.getElementById('area1').offsetWidth; // width
+var h = document.getElementById('area1').offsetHeight; // height
 
-	var y_range_bot = h/10; // y axis start point
-	var y_buffer = 20; // buffer for y axis domain
+var pad_vert = w/10; //
+var pad_horz = h/3;
 
-	var title1 = "Empty Weight Vs Time";
-	var title_y_pos = h/30;
+var y_range_bot = h/10; // y axis start point
+var y_buffer = h/15; // buffer for y axis domain
 
-	var axis1 = "Date";
-	var axis2 = "Weight (kg)";
+var title1 = "Empty Weight Vs Time";
+var title_y_pos = h/30;
 
-    //Create SVG element 
-    var xScale = d3.time.scale()
-                   .domain(d3.extent(dataset, function(d) { return d[0]; }))
-                   .range([pad_horz, w]);
-    var yScale = d3.scale.linear()
-                   .domain([d3.max(dataset, function(d) { return d[1]; }), d3.min(dataset, function(d) { return d[1]-y_buffer; })])
-                   .range([y_range_bot, h-pad_vert]);
+var axis1 = "Date";
+var axis2 = "(kg)";
 
-    var valueline = d3.svg.line()
-    	.x(function(d) { return xScale(d[0]); })
-    	.y(function(d) { return yScale(d[1]); });
+// scales
+var xScale = d3.time.scale()
+.domain(d3.extent(dataset, function(d) { return d[0]; }))
+.range([pad_horz, w]);
+var yScale = d3.scale.linear()
+.domain([d3.max(dataset, function(d) { return d[1]; }), d3.min(dataset, function(d) { return d[1]-y_buffer; })])
+.range([y_range_bot, h-pad_vert]);
 
-    var svg = d3.select("#w1_div")
-    	.append("svg")
-    	.attr("width", w)
-    	.attr("height", h);
+var valueline = d3.svg.line()
+.x(function(d) { return xScale(d[0]); })
+.y(function(d) { return yScale(d[1]); });
 
-     svg.append("path")
-     	.attr("class", "line")
-   		.attr("d", valueline(dataset));
+var svg = d3.select("#area1")
+.append("svg")
+.attr("width", w)
+.attr("height", h);
 
-   	 svg.append("text")
-   	  	.attr("x", ((w-pad_horz)/ 2)+pad_horz/2)             
-        .attr("y", title_y_pos)
-   	    .text(title1);
 
-   	 // x axis label
-   	 svg.append("text")
-   	  	.attr("x", ((w-pad_horz)/ 2)+pad_horz)             
-        .attr("y", h)
-   	    .text(axis1);
+// define x axis
+var xAxis = d3.svg.axis()
+.scale(xScale)
+.orient("bottom")
+.ticks(7)
+.tickFormat(d3.time.format('%b %y'));
 
-   	 // y axis label
-   	 svg.append("text")
-   	  	.attr("x", pad_horz/5)             
-        .attr("y", (h-pad_vert)/2 )
-   	    .text(axis2);
+// create x axis    
+svg.append("g")
+.attr("class", "axis") 
+.attr("transform", "translate(0," + (h - pad_vert) + ")")
+.call(xAxis);
 
-	// define X axis
-   	var xAxis = d3.svg.axis()
-                  .scale(xScale)
-                  .orient("bottom")
-                  .ticks(7)
-                  .tickFormat(d3.time.format('%b %y'));
+// define y axis
+var yAxis = d3.svg.axis()
+.scale(yScale)
+.orient("left");
 
-    //Create X axis    
-    svg.append("g")
-    .attr("class", "axis") 
-    .attr("transform", "translate(0," + (h - pad_vert) + ")")
-    .call(xAxis);
- 
+// create y axis
+svg.append("g")
+.attr("class", "axis")
+.attr("transform", "translate(" + pad_horz + ",0)")
+.call(yAxis);
 
-    //Define Y axis
-	var yAxis = d3.svg.axis()
-                  .scale(yScale)
-                  .orient("left");
+// create line
+svg.append("path")
+.attr("class", "line")
+.attr("d", valueline(dataset));
 
-    //Create Y axis
-	svg.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(" + pad_horz + ",0)")
-    .call(yAxis);
+// chart title
+svg.append("text")
+.attr("x", ((w-pad_horz)/ 2)+pad_horz/2)             
+.attr("y", title_y_pos)
+.text(title1);
 
+// x axis label
+svg.append("text")
+.attr("x", ((w-pad_horz)/ 2)+pad_horz)             
+.attr("y", h)
+.text(axis1);
+
+// y axis label
+svg.append("text")
+// .attr("transform", "rotate(-90)")
+.attr("x", pad_horz/5)             
+.attr("y", (h-pad_vert)/2 )
+.text(axis2);
+
+// tooltips
+var focus = svg.append("g")
+.attr("class", "focus")
+.style("display", "none");
+
+focus.append("circle")
+.attr("r", 4.5);
+
+focus.append("text")
+.attr("x", -pad_vert)
+.attr("dy", "1.5em");
+
+svg.append("rect")
+.attr("class", "overlay")
+.attr("width", w)
+.attr("height", h)
+.on("mouseover", function() { focus.style("display", null); })
+.on("mouseout", function() { focus.style("display", "none"); })
+.on("mousemove", mousemove);
+
+var bisectDate = d3.bisector(function(d) { return d[0]; }).left;
+
+function mousemove() {
+	var x0 = xScale.invert(d3.mouse(this)[0]),
+	i = bisectDate(dataset, x0, 1),
+	d0 = dataset[i - 1],
+	d1 = dataset[i],
+	d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
+	focus.attr("transform", "translate(" + xScale(d[0]) + "," + yScale(d[1]) + ")");
+	focus.select("text").text(d[1] + "kg");
+}
 
 </script>
