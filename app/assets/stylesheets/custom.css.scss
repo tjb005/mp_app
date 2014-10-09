@@ -1,15 +1,31 @@
 @import "bootstrap";
 
+body { padding-top: 70px; }
+
 #page_1{
-	display: none;
+	
 }
 
 #page_2{
-	display: none;
+	
 }
 
 #page_3{
 	
+}
+
+.navbar-inverse{
+  background-color:grey;
+}
+
+.navbar-btn{
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: white  ;
+  background-color: grey ;
+  border-color: grey;
 }
 
 .axis path,
