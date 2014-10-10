@@ -6,6 +6,5 @@ class ActypesController < ApplicationController
 	def show
   		@actype = Actype.find(params[:id])
   		@aircrafts = @actype.aircrafts
-  		
 	end
 end
