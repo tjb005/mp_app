@@ -12,3 +12,4 @@ class CreateActypes < ActiveRecord::Migration
     end
   end
 end
+  

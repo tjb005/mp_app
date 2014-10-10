@@ -1,9 +1,10 @@
 MpApp::Application.routes.draw do
+  get "actypes/new"
   get "aircrafts/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :aircrafts
-  resources :w1
+  resources :actypes
   root 'sessions#new'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/weight',  to: 'static_pages#weight',  via: 'get'

@@ -27,5 +27,19 @@ namespace :db do
       W1c1.create!(row.to_hash)
     end
 
+    require 'csv'
+    csv_text = File.read('db/actypes.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Actype.create!(row.to_hash)
+    end
+
+    require 'csv'
+    csv_text = File.read('db/relationships.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Relationship.create!(row.to_hash)
+    end
+
   end
 end
