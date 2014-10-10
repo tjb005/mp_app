@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010014051) do
+ActiveRecord::Schema.define(version: 20141010032044) do
+
+  create_table "actypes", force: true do |t|
+    t.string   "manuf"
+    t.string   "variant"
+    t.string   "rules"
+    t.float    "DBA"
+    t.float    "MC"
+    t.float    "C"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "aircrafts", force: true do |t|
     t.string   "reg"
