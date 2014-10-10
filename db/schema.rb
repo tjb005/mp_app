@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912052647) do
+ActiveRecord::Schema.define(version: 20141010014051) do
 
   create_table "aircrafts", force: true do |t|
     t.string   "reg"
@@ -61,5 +61,33 @@ ActiveRecord::Schema.define(version: 20140912052647) do
   end
 
   add_index "w1s", ["aircraft_id"], name: "index_w1s_on_aircraft_id"
+
+  create_table "w2c1s", force: true do |t|
+    t.date     "date"
+    t.string   "desc"
+    t.float    "wt"
+    t.float    "arm"
+    t.float    "moment"
+    t.string   "wca"
+    t.integer  "aircraft_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "w2c1s", ["aircraft_id"], name: "index_w2c1s_on_aircraft_id"
+
+  create_table "w2s", force: true do |t|
+    t.date     "date"
+    t.string   "desc"
+    t.float    "wt"
+    t.float    "arm"
+    t.float    "moment"
+    t.string   "wca"
+    t.integer  "aircraft_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "w2s", ["aircraft_id"], name: "index_w2s_on_aircraft_id"
 
 end
