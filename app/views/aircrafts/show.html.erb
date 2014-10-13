@@ -34,26 +34,55 @@ for	(i = 0; i < date_array.length; i++) {
 var w = document.getElementById('area1').offsetWidth;  // width
 var h = document.getElementById('area1').offsetHeight; // height
 
-var pad_vert = w/10; //
-var pad_horz = h/5;
+var pad_vert = h/10; 	// padding for y axis from bottom
+var pad_horz = w/7;		// padding for x axis from left
 
-var y_range_bot = h/10; // y axis start point
-var y_buffer = h/15; // buffer for y axis domain
+var y_range_bot = h/10; // y axis start point (distance from bottom)
+var y_buffer = h/15; 	// buffer to reduce lowest y axis point
 
 var title1 = "Empty Weight Vs Time";
 var title_y_pos = h/30;
 
 var axis1 = "Date";
-var axis2 = "(kg)";
+var axis2 = "Wt (kg)";
 
 // scales
 var xScale = d3.time.scale()
 .domain(d3.extent(dataset, function(d) { return d[0]; }))
 .range([pad_horz, w]);
 var yScale = d3.scale.linear()
-.domain([d3.max(dataset, function(d) { return d[2]; }), d3.min(dataset, function(d) { return d[2]-y_buffer; })])
+.domain([d3.max(dataset, function(d) { 
+    return Math.max(d[1], d[2]); }), d3.min(dataset, function(d) { return d[2]-y_buffer; })])
 .range([y_range_bot, h-pad_vert]);
 
+// select div
+var svg = d3.select("#area1")
+.append("svg")
+.attr("width", w)
+.attr("height", h);
+
+// fill area
+var	areafill1 = d3.svg.area()
+    .x(function(d) { return xScale(d[0]); })
+    .y0(h-pad_vert)
+    .y1(function(d) { return yScale(d[1]); });
+
+    svg.append("path")
+        .datum(dataset)
+        .attr("class", "areafill1")
+        .attr("d", areafill1);
+
+var	areafill2 = d3.svg.area()
+    .x(function(d) { return xScale(d[0]); })
+    .y0(function(d) { return yScale(d[1]); })
+    .y1(function(d) { return yScale(d[2]); });
+
+    svg.append("path")
+        .datum(dataset)
+        .attr("class", "areafill2")
+        .attr("d", areafill2);
+
+// valueline
 var valueline = d3.svg.line()
 .x(function(d) { return xScale(d[0]); })
 .y(function(d) { return yScale(d[1]); });
@@ -61,11 +90,6 @@ var valueline = d3.svg.line()
 var valueline2 = d3.svg.line()
 .x(function(d) { return xScale(d[0]); })
 .y(function(d) { return yScale(d[2]); });
-
-var svg = d3.select("#area1")
-.append("svg")
-.attr("width", w)
-.attr("height", h);
 
 
 // define x axis
@@ -112,6 +136,7 @@ svg.append("text")
 .attr("x", ((w-pad_horz)/ 2)+pad_horz)             
 .attr("y", h)
 .text(axis1);
+
 
 // y axis label
 svg.append("text")
@@ -193,7 +218,7 @@ function activeClass(obj)
 
 // load page_1 on start up
 collapsePages(); 
-expandElement('page_1');
+expandElement('page_3');
 
 
 
