@@ -10,27 +10,6 @@
 
 <script type=text/javascript>
 
-// multiple tabs
-function collapseElement(obj)
-{
-	var el = document.getElementById(obj);
-	el.style.display = 'none';
-}
-function expandElement(obj)
-{
-	var el = document.getElementById(obj);
-	el.style.display = '';
-}
-function collapsePages()
-{
-	var numFormPages = 3;
-	for(i=1; i <= numFormPages; i++)
-	{
-		currPageId = ('page_' + i);
-		collapseElement(currPageId);
-	}
-}
-
 // time vector
 var date_array_raw = <%=raw @date_array.as_json %>;
 var parseDate = d3.time.format("%Y-%m-%d");
@@ -41,21 +20,22 @@ for	(i = 0; i < date_array_raw.length; i++) {
 };
 
 // other data
-var w1_wt 	 = <%=raw @w2_wt %>;	
-var w1w2_wt 	 = <%=raw @w1w2_wt %>;
+var w1_wt 	 = <%=raw @w1_wt %>;
+var w2_wt    = <%=raw @w2_wt %>;
+var w1w2_wt  = <%=raw @w1w2_wt %>;
 
 // array for d3 line
 var dataset = new Array(date_array.length);
 for	(i = 0; i < date_array.length; i++) {
-	dataset[i] = [date_array[i], w1_wt[i]]
+	dataset[i] = [date_array[i], w1_wt[i], w1w2_wt[i]]
 };
 
 // graph properties
-var w = document.getElementById('area1').offsetWidth; // width
+var w = document.getElementById('area1').offsetWidth;  // width
 var h = document.getElementById('area1').offsetHeight; // height
 
 var pad_vert = w/10; //
-var pad_horz = h/3;
+var pad_horz = h/5;
 
 var y_range_bot = h/10; // y axis start point
 var y_buffer = h/15; // buffer for y axis domain
@@ -71,12 +51,16 @@ var xScale = d3.time.scale()
 .domain(d3.extent(dataset, function(d) { return d[0]; }))
 .range([pad_horz, w]);
 var yScale = d3.scale.linear()
-.domain([d3.max(dataset, function(d) { return d[1]; }), d3.min(dataset, function(d) { return d[1]-y_buffer; })])
+.domain([d3.max(dataset, function(d) { return d[2]; }), d3.min(dataset, function(d) { return d[2]-y_buffer; })])
 .range([y_range_bot, h-pad_vert]);
 
 var valueline = d3.svg.line()
 .x(function(d) { return xScale(d[0]); })
 .y(function(d) { return yScale(d[1]); });
+
+var valueline2 = d3.svg.line()
+.x(function(d) { return xScale(d[0]); })
+.y(function(d) { return yScale(d[2]); });
 
 var svg = d3.select("#area1")
 .append("svg")
@@ -113,6 +97,10 @@ svg.append("path")
 .attr("class", "line")
 .attr("d", valueline(dataset));
 
+svg.append("path")
+.attr("class", "line2")
+.attr("d", valueline2(dataset));
+
 // chart title
 svg.append("text")
 .attr("x", ((w-pad_horz)/ 2)+pad_horz/2)             
@@ -128,7 +116,7 @@ svg.append("text")
 // y axis label
 svg.append("text")
 // .attr("transform", "rotate(-90)")
-.attr("x", pad_horz/5)             
+.attr("x", pad_horz/10)             
 .attr("y", (h-pad_vert)/2 )
 .text(axis2);
 
@@ -160,8 +148,53 @@ function mousemove() {
 	d0 = dataset[i - 1],
 	d1 = dataset[i],
 	d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
-	focus.attr("transform", "translate(" + xScale(d[0]) + "," + yScale(d[1]) + ")");
-	focus.select("text").text(d[1] + "kg");
+	focus.attr("transform", "translate(" + xScale(d[0]) + "," + yScale(d[2]) + ")");
+	focus.select("text").text(d[2] + "kg");
 }
+
+
+// multiple tabs functions
+function collapseElement(obj)
+{
+	var el = document.getElementById(obj);
+	el.style.display = 'none';
+}
+
+function expandElement(obj)
+{
+	var el = document.getElementById(obj);
+	el.style.display = '';
+}
+
+function collapsePages()
+{
+	var numFormPages = 3;
+	for(i=1; i <= numFormPages; i++)
+	{
+		currPageId = ('page_' + i);
+		collapseElement(currPageId);
+	}
+}
+
+function activeClass(obj)
+{
+	var el = document.getElementById(obj);
+	el.className = 'btn btn-default navbar-btn active';
+
+	var numNavButtons = 3;
+	for(i=1; i <= numNavButtons; i++)
+	{
+		currNavId = ('nav_button' + i);
+		if(obj != currNavId){
+			document.getElementById(currNavId).className = 'btn btn-default navbar-btn';
+		}
+	}
+}
+
+// load page_1 on start up
+collapsePages(); 
+expandElement('page_1');
+
+
 
 </script>
