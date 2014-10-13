@@ -41,5 +41,19 @@ namespace :db do
       Relationship.create!(row.to_hash)
     end
 
+    require 'csv'
+    csv_text = File.read('db/w2.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      W2.create!(row.to_hash)
+    end
+
+    require 'csv'
+    csv_text = File.read('db/w2c1.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      W2c1.create!(row.to_hash)
+    end
+
   end
 end

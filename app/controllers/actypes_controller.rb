@@ -7,4 +7,5 @@ class ActypesController < ApplicationController
   		@actype = Actype.find(params[:id])
   		@aircrafts = @actype.aircrafts
 	end
+	
 end
