@@ -47,15 +47,12 @@ var h = 800;  // height
 
 // time graph
 
-var timeChart = dc.lineChart("dc-time-chart");
-
-
 // table
  dataTable.width(960).height(800)
     .dimension(timeDimension)
 	.group(function(d) { return "Weight History"
 	 })
-	// .size(10)
+	.size(10)
     .columns([
       function(d) { return d[0]; },
       function(d) { return d[1]; },
